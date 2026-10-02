@@ -963,6 +963,7 @@ html.is-nav-open .dock {
 
 .access__address {
   margin-top: 1.25rem;
+  font-style: normal;
 }
 
 .access__meta {
@@ -1096,6 +1097,10 @@ html.is-nav-open .dock {
   background: var(--night);
   color: var(--night-soft);
   font-size: 0.82rem;
+}
+
+.footer address {
+  font-style: normal;
 }
 
 .footer strong {

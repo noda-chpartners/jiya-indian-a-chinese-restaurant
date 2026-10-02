@@ -1,8 +1,13 @@
 export const site = {
   name: "Jiya Indian and Chinese Restaurant",
   shortName: "Jiya",
+  url: "https://jiya-indian-a-chinese-restaurant.pages.dev",
+  title: "Jiya | ひたちなか市相金町のインド・中華料理",
   description:
-    "茨城県ひたちなか市相金町のインド・中国料理店。カレー、ナン、タンドール、ビリヤニ、チョウミン。平日 11:00–15:00 / 17:00–22:00。定休日なし。15席、駐車場あり。高田の鉄橋駅から徒歩8分。",
+    "茨城県ひたちなか市相金町、那珂湊のインド・中華料理店Jiya。カレー、ナン、タンドール、ビリヤニ、チョウミン。平日11:00–15:00／17:00–22:00。定休日なし。15席・駐車場あり。高田の鉄橋駅から徒歩8分。",
+  /** 国土地理院の住所検索による相金町1番の座標 */
+  geo: { latitude: 36.349556, longitude: 140.583344 },
+  tabelogUrl: "https://tabelog.com/ibaraki/A0801/A080102/8031237/",
   phone: "029-229-1755",
   phoneHref: "tel:0292291755",
   postal: "〒311-1246",
