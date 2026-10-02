@@ -1,0 +1,35 @@
+---
+import { site } from "../data/site";
+---
+
+<section class="section access" id="access">
+  <div class="wrap access__grid">
+    <div data-reveal>
+      <p class="sec-label">
+        <span>05</span>
+        <span class="sec-label__rule" aria-hidden="true"></span>
+        <span>Access</span>
+      </p>
+      <h2 class="sec-title">アクセス</h2>
+      <p class="access__lead">{site.access}</p>
+      <p class="access__address">
+        {site.postal}<br />
+        {site.address}
+      </p>
+      <div class="access__meta">
+        <p>駐車場{site.parking} · {site.seats}席</p>
+        <a href={site.mapUrl} target="_blank" rel="noopener noreferrer">Googleマップで開く</a>
+      </div>
+    </div>
+    <div class="map" data-map data-reveal>
+      <iframe
+        title="Jiya Indian and Chinese Restaurantの地図"
+        src={site.mapEmbed}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <button class="map__unlock" type="button" data-map-unlock>地図を操作する</button>
+      <button class="map__lock" type="button" data-map-lock>操作を終了</button>
+    </div>
+  </div>
+</section>

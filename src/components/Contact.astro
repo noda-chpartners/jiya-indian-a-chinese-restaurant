@@ -1,0 +1,42 @@
+---
+import { site } from "../data/site";
+---
+
+<section class="section contact" id="contact">
+  <p class="contact__watermark" aria-hidden="true">Jiya</p>
+  <div class="wrap contact__inner" data-reveal>
+    <p class="sec-label sec-label--center">
+      <span class="sec-label__rule" aria-hidden="true"></span>
+      <span>Reserve</span>
+      <span class="sec-label__rule" aria-hidden="true"></span>
+    </p>
+    <h2 class="sec-title">ご予約</h2>
+    <p class="contact__text">お席のご予約は、お電話またはウェブから。15席の店です。ご連絡のうえ、お越しください。</p>
+    <a class="contact__tel" href={site.phoneHref}>
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          d="M8 4.8h2.1l1.1 2.8-1.5.9a12 12 0 0 0 5.8 5.8l.9-1.5 2.8 1.1V18a1.4 1.4 0 0 1-1.4 1.4A13.6 13.6 0 0 1 4.6 6.2 1.4 1.4 0 0 1 8 4.8Z"
+        ></path>
+      </svg>
+      {site.phone}
+    </a>
+    <div class="contact__actions">
+      <a class="btn" href={site.reserveUrl} target="_blank" rel="noopener noreferrer">
+        ウェブで予約する
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 17 17 7M9 7h8v8"></path>
+        </svg>
+      </a>
+      <a class="btn btn--ghost" href={site.mapUrl} target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="1.5" d="M12 21s6-5.1 6-10a6 6 0 1 0-12 0c0 4.9 6 10 6 10Z"></path>
+          <circle cx="12" cy="11" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+        </svg>
+        地図
+      </a>
+    </div>
+  </div>
+</section>

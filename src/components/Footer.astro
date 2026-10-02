@@ -1,0 +1,15 @@
+---
+import { site } from "../data/site";
+---
+
+<footer class="footer">
+  <div>
+    <strong>Jiya</strong>
+    <p>{site.name}</p>
+  </div>
+  <p>
+    {site.postal} {site.address}<br />
+    <a href={site.phoneHref}>{site.phone}</a>
+  </p>
+  <p>© {new Date().getFullYear()} {site.shortName}</p>
+</footer>

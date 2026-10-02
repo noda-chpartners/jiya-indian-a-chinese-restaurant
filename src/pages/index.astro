@@ -1,17 +1,61 @@
 ---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import Marquee from "../components/Marquee.astro";
+import About from "../components/About.astro";
+import Signature from "../components/Signature.astro";
+import Menu from "../components/Menu.astro";
+import Gallery from "../components/Gallery.astro";
+import Info from "../components/Info.astro";
+import Access from "../components/Access.astro";
+import Contact from "../components/Contact.astro";
+import { site } from "../data/site";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  name: site.name,
+  telephone: "+81-29-229-1755",
+  servesCuisine: ["Indian", "Chinese"],
+  address: {
+    "@type": "PostalAddress",
+    postalCode: "311-1246",
+    addressRegion: "茨城県",
+    addressLocality: "ひたちなか市",
+    streetAddress: "相金町1-5",
+    addressCountry: "JP",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "11:00",
+      closes: "15:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "17:00",
+      closes: "22:00",
+    },
+  ],
+  acceptsReservations: true,
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: site.reserveUrl,
+  },
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <Hero />
+  <Marquee />
+  <About />
+  <Signature />
+  <Menu />
+  <Gallery />
+  <Info />
+  <Access />
+  <Contact />
+</Base>

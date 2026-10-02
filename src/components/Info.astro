@@ -1,0 +1,54 @@
+---
+import { site } from "../data/site";
+---
+
+<section class="section info" id="info">
+  <div class="wrap info__grid">
+    <div data-reveal>
+      <p class="sec-label">
+        <span>04</span>
+        <span class="sec-label__rule" aria-hidden="true"></span>
+        <span>Info</span>
+      </p>
+      <h2 class="sec-title">ご案内</h2>
+      <div class="hours">
+        <p class="hours__label">{site.hoursLabel}</p>
+        <p class="hours__time">{site.lunch}</p>
+        <p class="hours__time">{site.dinner}</p>
+      </div>
+      <p class="hours__note">掲載の営業時間は平日のものです。定休日はありません。</p>
+      <ul class="info__facts">
+        <li>
+          <span>席数</span>
+          <strong>{site.seats}<small>席</small></strong>
+        </li>
+        <li>
+          <span>定休日</span>
+          <strong>{site.closed}</strong>
+        </li>
+        <li>
+          <span>駐車場</span>
+          <strong>{site.parking}</strong>
+        </li>
+      </ul>
+    </div>
+    <dl class="info__dl" data-reveal>
+      <div>
+        <dt>Phone</dt>
+        <dd><a href={site.phoneHref}>{site.phone}</a></dd>
+      </div>
+      <div>
+        <dt>Address</dt>
+        <dd>{site.postal}<br />{site.address}</dd>
+      </div>
+      <div>
+        <dt>Access</dt>
+        <dd>{site.access}</dd>
+      </div>
+      <div>
+        <dt>Reserve</dt>
+        <dd><a href={site.reserveUrl} target="_blank" rel="noopener noreferrer">ウェブで予約する</a></dd>
+      </div>
+    </dl>
+  </div>
+</section>

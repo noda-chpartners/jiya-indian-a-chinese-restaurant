@@ -1,0 +1,47 @@
+---
+import { menu } from "../data/site";
+---
+
+<section class="section menu" id="menu-list">
+  <div class="wrap">
+    <header data-reveal>
+      <p class="sec-label">
+        <span>03</span>
+        <span class="sec-label__rule" aria-hidden="true"></span>
+        <span>Menu</span>
+      </p>
+      <h2 class="sec-title">お品書き</h2>
+      <p class="menu__spice">カレーの辛さは、甘口・普通・中辛・辛口・激辛からお選びいただけます。</p>
+    </header>
+    <div class="menu__layout">
+      <nav class="menu__nav" aria-label="メニューの分類">
+        {menu.map((cat) => <a href={`#${cat.id}`}>{cat.ja}</a>)}
+      </nav>
+      <div class="menu__list">
+        {
+          menu.map((cat) => (
+            <section class="menu-cat" id={cat.id} data-reveal>
+              <header class="menu-cat__head">
+                <p class="menu-cat__en">{cat.en}</p>
+                <h3 class="menu-cat__ja">{cat.ja}</h3>
+                {cat.note && <p class="menu-cat__note">{cat.note}</p>}
+              </header>
+              <div class="menu-cat__items">
+                {cat.items.map((item) => (
+                  <article class="menu-row">
+                    <div>
+                      <h4 class="menu-row__name">{item.name}</h4>
+                      {item.desc && <p class="menu-row__desc">{item.desc}</p>}
+                    </div>
+                    <p class="menu-row__price">{item.price}</p>
+                  </article>
+                ))}
+              </div>
+              {cat.foot && <p class="menu-cat__foot">{cat.foot}</p>}
+            </section>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

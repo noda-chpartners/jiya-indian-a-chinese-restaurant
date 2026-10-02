@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import butter from "../assets/images/IMG_2645.jpg";
+import nan from "../assets/images/IMG_2640.jpg";
+import tandoori from "../assets/images/IMG_2647.jpg";
+import tikka from "../assets/images/IMG_2648.jpg";
+import green from "../assets/images/IMG_2650.jpg";
+import veg from "../assets/images/IMG_2651.jpg";
+
+const dishes = [
+  {
+    no: "01",
+    name: "バターチキン",
+    note: "クリームとバターが溶ける、まろやかな赤。",
+    image: butter,
+    alt: "クリームとバターをのせた赤いカレー",
+    plate: false,
+  },
+  {
+    no: "02",
+    name: "ナン",
+    note: "窯の熱で、もちもちと焦げ目を。",
+    image: nan,
+    alt: "皿に盛った、焼き色のついたナン",
+    plate: false,
+  },
+  {
+    no: "03",
+    name: "タンドリーチキン",
+    note: "スパイスの香りを、皮の向こうまで。",
+    image: tandoori,
+    alt: "レモンと葉野菜を添えたタンドリーチキン",
+    plate: false,
+  },
+  {
+    no: "04",
+    name: "チキンティッカ",
+    note: "一口ずつ、香ばしく。",
+    image: tikka,
+    alt: "皿に盛ったチキンティッカ",
+    plate: false,
+  },
+  {
+    no: "05",
+    name: "緑のカレー",
+    note: "銅鍋に、深い緑とアーモンド。",
+    image: green,
+    alt: "銅鍋に入った緑のカレー",
+    plate: true,
+  },
+  {
+    no: "06",
+    name: "野菜カレー",
+    note: "なす、かぼちゃ、パプリカ。",
+    image: veg,
+    alt: "なすとかぼちゃとパプリカの野菜カレー",
+    plate: false,
+  },
+];
+---
+
+<section class="signature" id="menu">
+  <div class="signature__pin">
+    <div class="signature__bar">
+      <p class="sec-label">
+        <span>02</span>
+        <span class="sec-label__rule" aria-hidden="true"></span>
+        <span>Signature</span>
+      </p>
+      <a href="#menu-list">料金を見る</a>
+    </div>
+    <div class="signature__track" data-lenis-prevent>
+      {
+        dishes.map((dish) => (
+          <article class="signature__card">
+            <figure class:list={["signature__visual", "media", { "is-plate": dish.plate }]}>
+              <Image
+                src={dish.image}
+                alt={dish.alt}
+                widths={[480, 800, 1100]}
+                sizes="(min-width: 900px) 40vw, 100vw"
+                quality={72}
+              />
+            </figure>
+            <div class="signature__meta">
+              <span>{dish.no}</span>
+              <div>
+                <h3>{dish.name}</h3>
+                <p>{dish.note}</p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

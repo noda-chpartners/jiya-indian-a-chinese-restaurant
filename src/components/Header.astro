@@ -1,0 +1,29 @@
+---
+import { site } from "../data/site";
+---
+
+<header class="header">
+  <a class="logo" href="#top">Jiya</a>
+  <nav class="gnav" aria-label="メイン">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#info">Info</a>
+    <a href="#access">Access</a>
+  </nav>
+  <a class="header__reserve" href={site.reserveUrl} target="_blank" rel="noopener noreferrer">予約する</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="メニューを開く">
+    <span></span>
+    <span></span>
+  </button>
+  <div id="nav-panel" class="nav-panel" aria-hidden="true" inert>
+    <a href="#about"><span>01</span>About</a>
+    <a href="#menu"><span>02</span>Menu</a>
+    <a href="#info"><span>03</span>Info</a>
+    <a href="#access"><span>04</span>Access</a>
+    <a href="#contact"><span>05</span>Contact</a>
+    <div class="nav-panel__foot">
+      <a href={site.phoneHref}>{site.phone}</a>
+      <a class="nav-panel__reserve" href={site.reserveUrl} target="_blank" rel="noopener noreferrer">予約する</a>
+    </div>
+  </div>
+</header>

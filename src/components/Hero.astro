@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import { site } from "../data/site";
+import hero from "../assets/images/IMG_2643.jpg";
+import nan from "../assets/images/IMG_2641.jpg";
+---
+
+<section class="hero" id="top">
+  <div class="hero__copy">
+    <p class="eyebrow">Hitachinaka · Indian &amp; Chinese</p>
+    <h1 class="hero__title">
+      <span class="hero__title-line"><span>Jiya</span></span>
+      <span class="sr-only">{site.name}</span>
+    </h1>
+    <p class="hero__lead">インドと中国、ふたつの厨房。</p>
+    <div class="hero__actions">
+      <a class="btn" href={site.reserveUrl} target="_blank" rel="noopener noreferrer">
+        予約する
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="1.5" d="M7 17 17 7M9 7h8v8"></path>
+        </svg>
+      </a>
+      <a class="btn btn--ghost" href="#menu">メニュー</a>
+    </div>
+  </div>
+  <div class="hero__media">
+    <figure class="hero__photo media">
+      <Image
+        src={hero}
+        alt="クリームを垂らした、赤いカレー"
+        widths={[640, 960, 1280, 1600]}
+        sizes="(min-width: 960px) 48vw, 100vw"
+        loading="eager"
+        fetchpriority="high"
+        quality={78}
+      />
+    </figure>
+    <figure class="hero__float media">
+      <Image
+        src={nan}
+        alt="かごに入った、焼き目のついたナン"
+        widths={[360, 640, 800]}
+        sizes="16vw"
+        quality={72}
+      />
+    </figure>
+    <span class="hero__frame" aria-hidden="true"></span>
+  </div>
+  <ul class="hero__facts">
+    <li>
+      <span>Address</span>
+      {site.address}
+    </li>
+    <li>
+      <span>Hours</span>
+      {site.hoursLabel} {site.lunch} / {site.dinner}
+    </li>
+    <li>
+      <span>Access</span>
+      {site.access}
+    </li>
+  </ul>
+</section>

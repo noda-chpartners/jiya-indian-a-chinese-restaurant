@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import nan from "../assets/images/IMG_2641.jpg";
+import curry from "../assets/images/IMG_2642.jpg";
+import handi from "../assets/images/IMG_2649.jpg";
+import fried from "../assets/images/IMG_2646.jpg";
+import herb from "../assets/images/IMG_2644.jpg";
+
+const photos = [
+  {
+    src: nan,
+    alt: "かごに盛ったナン",
+    caption: "ナン",
+    feature: true,
+    plate: false,
+  },
+  {
+    src: curry,
+    alt: "ステンレスの鍋に入ったオレンジ色のカレー",
+    caption: "カレー",
+    feature: false,
+    plate: false,
+  },
+  {
+    src: handi,
+    alt: "銅鍋に入ったチキンカレー",
+    caption: "チキンカレー",
+    feature: false,
+    plate: true,
+  },
+  {
+    src: fried,
+    alt: "レモンを添えたスパイスの揚げもの",
+    caption: "スパイスの揚げもの",
+    feature: false,
+    plate: false,
+  },
+  {
+    src: herb,
+    alt: "ハーブを散らした赤いカレー",
+    caption: "ハーブのカレー",
+    feature: false,
+    plate: false,
+  },
+];
+---
+
+<section class="section gallery" aria-labelledby="gallery-title">
+  <div class="wrap--wide">
+    <header data-reveal>
+      <p class="sec-label">
+        <span class="sec-label__rule" aria-hidden="true"></span>
+        <span>Table</span>
+      </p>
+      <h2 class="sec-title" id="gallery-title">食卓の景色</h2>
+    </header>
+    <div class="gallery__grid" data-reveal>
+      {
+        photos.map((photo) => (
+          <figure class:list={["gallery__item", "media", { "gallery__item--feature": photo.feature, "is-plate": photo.plate }]}>
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              widths={[480, 800, 1200]}
+              sizes={photo.feature ? "(min-width: 960px) 42vw, 100vw" : "(min-width: 960px) 28vw, 50vw"}
+              quality={70}
+            />
+            <figcaption>{photo.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>
